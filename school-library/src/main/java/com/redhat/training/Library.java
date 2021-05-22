@@ -21,9 +21,9 @@ public class Library {
     }
 
     public Book checkOut(String studentId, String isbn) throws BookNotAvailableException {
-        if (!inventory.isBookAvailable(isbn)) {
+	if (!inventory.isBookAvailable(isbn)) {
             throw new BookNotAvailableException(isbn);
-        }
+        } 
 
         Book book = inventory.withdraw(isbn);
         loans.markAsBorrowed(studentId, book);
